@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="radioBtn">
+        <item name="android:buttonTint">@color/colorPrimaryDark</item>
+        <item name="android:width">@dimen/rdo_btn_xl</item>
+        <item name="android:textSize">@dimen/basicText2_xl</item>
+    </style>
+</resources>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/defaultBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="be.wilson.projetjanvier2018.ItemInfosActivity">
+
+        <!-- Titre -->
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="@string/item_infos_title"
+            style="@style/title"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:id="@+id/item_infos_title" />
+
+        <!-- Label nom -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/basicText1"
+            android:text="@string/name"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/item_infos_title"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/name"
+            android:textStyle="bold"/>
+
+        <!-- Texte nom -->
+        <TextView
+            android:layout_width="@dimen/et_width_land"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            android:id="@+id/nameTxtR"
+            style="@style/basicText2" />
+
+        <!-- Label description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/basicText1"
+            android:text="@string/desc"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/nameTxtR"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/desc"
+            android:textStyle="bold" />
+
+        <!-- Texte description -->
+        <TextView
+            android:layout_width="@dimen/et_width_land"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/desc"
+            android:id="@+id/descTxtR"
+            style="@style/basicText2" />
+
+        <!-- Label prix -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/basicText1"
+            android:text="@string/price"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/descTxtR"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/prix"
+            android:textStyle="bold" />
+
+        <!-- Texte prix -->
+        <TextView
+            android:layout_width="@dimen/et_width_land"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/prix"
+            android:id="@+id/prixTxtR"
+            style="@style/basicText2" />
+
+        <!-- Label état -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/basicText1"
+            android:text="@string/state"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/prixTxtR"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/state"
+            android:textStyle="bold" />
+
+        <!-- Texte état -->
+        <TextView
+            android:layout_width="@dimen/radio_group_land"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="-29dp"
+            app:layout_constraintTop_toBottomOf="@+id/state"
+            android:id="@+id/stateTxtR"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            style="@style/basicText2"/>
+
+        <!-- Label ville -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/basicText1"
+            android:text="@string/city"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/stateTxtR"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/city"
+            android:textStyle="bold"/>
+
+        <!-- Texte ville -->
+        <TextView
+            android:layout_width="@dimen/et_width_land"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/city"
+            android:id="@+id/cityTxtR"
+            style="@style/basicText2" />
+
+        <!-- Label information -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/basicText1"
+            android:text="@string/info"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/cityTxtR"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/info"
+            android:textStyle="bold" />
+
+        <!-- Texte information -->
+        <TextView
+            android:layout_width="@dimen/radio_group_land"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/info"
+            android:id="@+id/infoTxtR"
+            style="@style/basicText2" />
+
+        <!-- Bouton retour -->
+        <Button
+            android:layout_width="@dimen/btn_width1_land"
+            android:layout_height="wrap_content"
+            style="@style/btn1"
+            android:text="@string/back"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/infoTxtR"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/item_infos_back"/>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

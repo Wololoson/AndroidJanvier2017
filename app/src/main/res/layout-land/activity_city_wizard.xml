@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/defaultBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="be.wilson.projetjanvier2018.CityWizardActivity">
+
+        <!-- Titre -->
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="@string/select_city"
+            style="@style/title"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:id="@+id/select_city_title"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_width="0dp" />
+
+        <!-- Barre de recherche -->
+
+        <!-- Bouton validation -->
+        <Button
+            android:layout_width="@dimen/btn_width1"
+            android:layout_height="wrap_content"
+            style="@style/btn1"
+            android:text="@string/confirm"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/valid_btn"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/radioGrp_cities" />
+
+        <!-- Bouton retour -->
+        <Button
+            android:layout_width="@dimen/btn_width1"
+            android:layout_height="wrap_content"
+            style="@style/btn1"
+            android:text="@string/back"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/valid_btn"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:id="@+id/city_back_button" />
+
+        <!-- Barre de recherche -->
+        <SearchView
+            android:id="@+id/searchBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:clickable="true"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/select_city_title">
+
+        </SearchView>
+
+        <!-- Liste des villes -->
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGrp_cities"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar"
+            app:layout_constraintHorizontal_bias="0.501">
+
+        </RadioGroup>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

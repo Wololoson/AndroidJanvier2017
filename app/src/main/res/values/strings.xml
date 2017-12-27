@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ProjetJanvier2018</string>
+    <string name="home_title">Welcome</string>
+    <string name="add_title">Add an item</string>
+    <string name="search_p_title">Search items by price</string>
+    <string name="search_c_title">Search items by city</string>
+    <string name="name">Name : </string>
+    <string name="desc">Description : </string>
+    <string name="price">Price : </string>
+    <string name="state">State : </string>
+    <string name="city">City : </string>
+    <string name="info">Information : </string>
+    <string name="radio_state_new">New</string>
+    <string name="radio_state_used">Used</string>
+    <string name="radio_info_must_send">Can be sent</string>
+    <string name="radio_info_by_hand">Picked up by hands</string>
+    <string name="confirm">Confirm</string>
+    <string name="choose_city_btn">Choose a city</string>
+    <string name="select_city">Select a city</string>
+    <string name="back">Back</string>
+    <string name="min_price">Minimum price : </string>
+    <string name="max_price">Maximum price : </string>
+    <string name="results_title">Results</string>
+    <string name="prev_btn">Previous</string>
+    <string name="next_btn">Next</string>
+    <string name="asc_sort">Ascendant sorting</string>
+    <string name="desc_sort">Descendant sorting</string>
+    <string name="item_infos_title">Item information</string>
+    <string name="empty_error">All fields must be filled</string>
+    <string name="loading">Loading...</string>
+    <string name="nameCol">Name</string>
+    <string name="priceCol">Price</string>
+    <string name="cityCol">City</string>
+    <string name="stateCol">State</string>
+    <string name="emptyItemList">No items to show</string>
+</resources>

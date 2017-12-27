@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/defaultBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="be.wilson.projetjanvier2018.SearchByCityActivity">
+
+        <!-- Titre -->
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="@string/search_c_title"
+            style="@style/title_xl"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:id="@+id/search_c_title" />
+
+        <!-- Label ville -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/basicText1_xl"
+            android:text="@string/city"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/search_c_title"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/city" />
+
+        <!-- Input ville -->
+        <EditText
+            android:layout_width="@dimen/et_width_xl"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/city"
+            android:id="@+id/cityTxt" />
+
+        <!-- Bouton ville -->
+        <Button
+            android:layout_width="@dimen/btn_width1_xl"
+            android:layout_height="@dimen/btn_height_xl"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/cityTxt"
+            android:id="@+id/cityBtn"
+            style="@style/btn1_xl"
+            android:text="@string/choose_city_btn" />
+
+        <!-- Bouton validation -->
+        <Button
+            android:layout_width="@dimen/btn_width1_xl"
+            android:layout_height="@dimen/btn_height_xl"
+            style="@style/btn1_xl"
+            android:text="@string/confirm"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/cityBtn"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/search_c_valid_btn"/>
+
+        <!-- Bouton retour -->
+        <Button
+            android:layout_width="@dimen/btn_width1_xl"
+            android:layout_height="@dimen/btn_height_xl"
+            style="@style/btn1_xl"
+            android:text="@string/back"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/search_c_valid_btn"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/srch_by_c_back"/>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

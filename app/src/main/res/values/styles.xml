@@ -1,0 +1,74 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+
+    </style>
+
+    <style name="title">
+        <item name="android:textColor">@color/colorPrimaryDarker</item>
+        <item name="android:textSize">@dimen/title_font</item>
+        <item name="android:background">@color/lightGrey</item>
+        <item name="android:width">@dimen/title_width</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">@dimen/zero</item>
+    </style>
+
+    <style name="btn1">
+        <item name="android:textSize">@dimen/btn_font1</item>
+        <item name="android:background">@color/lightGrey</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="btn2">
+        <item name="android:textSize">@dimen/btn_font2</item>
+        <item name="android:background">@color/lightGrey</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="basicText1">
+        <item name="android:textSize">@dimen/basicText1</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="basicText2">
+        <item name="android:textSize">@dimen/basicText2</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="title_xl">
+        <item name="android:textColor">@color/colorPrimaryDarker</item>
+        <item name="android:textSize">@dimen/title_font_xl</item>
+        <item name="android:background">@color/lightGrey</item>
+        <item name="android:width">@dimen/title_width_xl</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">@dimen/zero</item>
+    </style>
+
+    <style name="btn1_xl">
+        <item name="android:textSize">@dimen/btn_font1_xl</item>
+        <item name="android:background">@color/lightGrey</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="btn2_xl">
+        <item name="android:textSize">@dimen/btn_font2_xl</item>
+        <item name="android:background">@color/lightGrey</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="basicText1_xl">
+        <item name="android:textSize">@dimen/basicText1_xl</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="basicText2_xl">
+        <item name="android:textSize">@dimen/basicText2_xl</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+</resources>

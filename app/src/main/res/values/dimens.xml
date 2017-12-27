@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_font">30sp</dimen>
+    <dimen name="btn_font1">20sp</dimen>
+    <dimen name="btn_font2">15sp</dimen>
+    <dimen name="basicText1">20sp</dimen>
+    <dimen name="basicText2">18sp</dimen>
+
+    <dimen name="title_width">350dp</dimen>
+    <dimen name="btn_width1">300dp</dimen>
+    <dimen name="btn_width2">150dp</dimen>
+    <dimen name="btn_width1_land">400dp</dimen>
+    <dimen name="btn_width2_land">250dp</dimen>
+    <dimen name="et_width">350dp</dimen>
+    <dimen name="et_width_land">450dp</dimen>
+    <dimen name="radio_group">275dp</dimen>
+    <dimen name="radio_group_land">450dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="progress_bar_w">126dp</dimen>
+    <dimen name="progress_bar_h">103dp</dimen>
+
+    <dimen name="title_font_xl">60sp</dimen>
+    <dimen name="btn_font1_xl">40sp</dimen>
+    <dimen name="btn_font2_xl">35sp</dimen>
+    <dimen name="basicText1_xl">45sp</dimen>
+    <dimen name="basicText2_xl">40sp</dimen>
+
+    <dimen name="title_width_xl">550dp</dimen>
+    <dimen name="btn_width1_xl">600dp</dimen>
+    <dimen name="btn_height_xl">75dp</dimen>
+    <dimen name="btn_width2_xl">375dp</dimen>
+    <dimen name="btn_width1_land_xl">700dp</dimen>
+    <dimen name="btn_width2_land_xl">475dp</dimen>
+    <dimen name="et_width_xl">650dp</dimen>
+    <dimen name="et_width_land_xl">850dp</dimen>
+    <dimen name="radio_group_xl">650dp</dimen>
+    <dimen name="radio_group_land_xl">750dp</dimen>
+    <dimen name="rdo_btn_xl">600dp</dimen>
+    <dimen name="progress_bar_w_xl">326dp</dimen>
+    <dimen name="progress_bar_h_xl">303dp</dimen>
+    <dimen name="items_list_w">600dp</dimen>
+</resources>
