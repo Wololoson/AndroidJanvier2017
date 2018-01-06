@@ -1,0 +1,4 @@
+La base de données est stockée sur un serveur se trouvant chez moi.
+Lorsque vous devrez utiliser la base de données, envoyez moi un message (0483/12.28.58), je vous dirai si le serveur est allumé.
+Si il n'est pas allumé et que je ne peux pas l'allumer, j'ai mis une copie des fichiers qui y sont hébergés dans le dossier ScriptsDB.
+Vous devrez alors juste changer l'URL dans le projet.
