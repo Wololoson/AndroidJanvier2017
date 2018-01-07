@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 public class ResultsActivity extends AppCompatActivity {
 
+    //Déclaration des variables
     private TableLayout itemList;
     private Button nextBtn, prevBtn, sortBtn, backBtn;
 
@@ -62,6 +63,9 @@ public class ResultsActivity extends AppCompatActivity {
 
         orientation = getResources().getConfiguration().orientation;
 
+        itemBundle = getIntent().getExtras();
+
+        //Si on tourne l'écran
         if(savedInstanceState != null){
             ASC = savedInstanceState.getBoolean("ASC");
             itemAL = savedInstanceState.getStringArrayList("itemAL");
@@ -71,7 +75,6 @@ public class ResultsActivity extends AppCompatActivity {
         }
         else {
             ASC = true;
-            itemBundle = getIntent().getExtras();
             itemAL = itemBundle.getStringArrayList("items");
 
             if(itemAL == null){
@@ -89,6 +92,7 @@ public class ResultsActivity extends AppCompatActivity {
         data = itemBundle.getString("data");
         resuming = false;
 
+        //Passagde des donnéees de l'ArrayList vers un tableau à deux dimensions
         int j = 0;
         for (int i = 0; i < itemAL.size(); i = i + 6) {
             items[j][0] = itemAL.get(i);
@@ -100,6 +104,7 @@ public class ResultsActivity extends AppCompatActivity {
             j++;
         }
 
+        //Préparation du sstème de pages
         if (interval == 0) {
             TableRow tr = new TableRow(this);
             TextView tv = new TextView(this);
@@ -118,6 +123,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     }
 
+    //Activation/désactivation des boutons
     public void enableBtns(){
         if(firstArt < 5){
             prevBtn.setEnabled(false);
@@ -145,6 +151,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     }
 
+    //Tri ascendant
     public void sortASC(){
         int max_i;
         for(int i = items.length; i > 1; i--){
@@ -153,6 +160,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     }
 
+    //Swap servant aux tris
     void swap(int x, int y)
     {
         String[] tmp = new String[6];
@@ -179,6 +187,7 @@ public class ResultsActivity extends AppCompatActivity {
         items[y][5] = tmp[5];
     }
 
+    //Fonction retournant un maximum servant aux tris
     public int max(int length)
     {
         int i=0, indice_max=0;
@@ -193,6 +202,7 @@ public class ResultsActivity extends AppCompatActivity {
         return indice_max;
     }
 
+    //Inversion du tri
     public void reverse(){
         int max_i;
         for(int i = 0; i < items.length/2; i++){
@@ -200,6 +210,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     }
 
+    //Remplissage du tableau des articles en fonction de l'écran
     public void fill(int end){
         itemList.removeAllViews();
         TableRow tr;
@@ -214,7 +225,10 @@ public class ResultsActivity extends AppCompatActivity {
         nom.setText(R.string.nameCol);
         nom.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
         nom.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        nom.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+        if(screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
+            nom.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+        else
+            nom.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
         nom.setPadding(10,10,50,10);
         tr.addView(nom);
 
@@ -222,6 +236,9 @@ public class ResultsActivity extends AppCompatActivity {
         prix.setText(R.string.priceCol);
         prix.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
         prix.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        if(screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
+            prix.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+        else
         prix.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
         prix.setPadding(10,10,50,10);
         tr.addView(prix);
@@ -232,29 +249,30 @@ public class ResultsActivity extends AppCompatActivity {
                 ville.setText(R.string.cityCol);
                 ville.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
                 ville.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-                ville.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                ville.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
                 ville.setPadding(10,10,50,10);
                 tr.addView(ville);
             }
         }
 
         if(orientation == Configuration.ORIENTATION_LANDSCAPE){
-            if(screenSize == Configuration.SCREENLAYOUT_SIZE_NORMAL){
-                ville = new TextView(this);
-                ville.setText(R.string.cityCol);
-                ville.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
-                ville.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+            ville = new TextView(this);
+            ville.setText(R.string.cityCol);
+            ville.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            ville.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+            if(screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
+                ville.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+            else
                 ville.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-                ville.setPadding(10,10,50,10);
-                tr.addView(ville);
-            }
+            ville.setPadding(10,10,50,10);
+            tr.addView(ville);
 
             if(screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE){
                 etat = new TextView(this);
                 etat.setText(R.string.stateCol);
                 etat.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
                 etat.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-                etat.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                etat.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
                 etat.setPadding(10,10,50,10);
                 tr.addView(etat);
             }
@@ -272,7 +290,10 @@ public class ResultsActivity extends AppCompatActivity {
             nom.setText(items[i][0]);
             nom.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
             nom.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
-            nom.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+            if(screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
+                nom.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+            else
+                nom.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
             nom.setPadding(10,10,50,10);
             tr.addView(nom);
 
@@ -280,7 +301,10 @@ public class ResultsActivity extends AppCompatActivity {
             prix.setText(items[i][1]);
             prix.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
             prix.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
-            prix.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+            if(screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
+                prix.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+            else
+                prix.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
             prix.setPadding(10,10,50,10);
             tr.addView(prix);
 
@@ -290,29 +314,33 @@ public class ResultsActivity extends AppCompatActivity {
                     ville.setText(items[i][2]);
                     ville.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
                     ville.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
-                    ville.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    ville.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
                     ville.setPadding(10,10,50,10);
                     tr.addView(ville);
                 }
             }
 
             if(orientation == Configuration.ORIENTATION_LANDSCAPE){
-                if(screenSize == Configuration.SCREENLAYOUT_SIZE_NORMAL){
-                    ville = new TextView(this);
-                    ville.setText(items[i][2]);
-                    ville.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
-                    ville.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
+                ville = new TextView(this);
+                ville.setText(items[i][2]);
+                ville.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
+                ville.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
+                if(screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
+                    ville.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+                else
                     ville.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-                    ville.setPadding(10,10,50,10);
-                    tr.addView(ville);
-                }
+                ville.setPadding(10,10,50,10);
+                tr.addView(ville);
 
                 if(screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE){
                     etat = new TextView(this);
-                    etat.setText(items[i][3]);
+                    if(items[i][3].equals("1"))
+                        etat.setText(R.string.radio_state_new);
+                    else
+                        etat.setText(R.string.radio_state_used);
                     etat.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
                     etat.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
-                    etat.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    etat.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
                     etat.setPadding(10,10,50,10);
                     tr.addView(etat);
                 }
@@ -321,6 +349,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     }
 
+    //Listener de tri
     View.OnClickListener SortList = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -340,6 +369,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     };
 
+    //Listener du bouton suivant
     View.OnClickListener nextList = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -356,6 +386,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     };
 
+    //Listener du bouton précédent
     View.OnClickListener prevList = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -366,6 +397,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     };
 
+    //Listener des infos de l'article
     View.OnClickListener infosLis = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -380,6 +412,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     };
 
+    //Listener de retour à l'accueil
     View.OnClickListener backList = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -387,6 +420,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     };
 
+    //Sauvegarde lors de la rotation
     @Override
     public void onSaveInstanceState(Bundle saveInstanceState) {
         super.onSaveInstanceState(saveInstanceState);
@@ -396,12 +430,14 @@ public class ResultsActivity extends AppCompatActivity {
         saveInstanceState.putInt("interval", interval);
     }
 
+    //Gestion de la mise en veille
     @Override
     protected void onPause() {
         super.onPause();
         resuming = true;
     }
 
+    //Gestion de la mise en veille
     @Override
     protected void onResume() {
         super.onResume();

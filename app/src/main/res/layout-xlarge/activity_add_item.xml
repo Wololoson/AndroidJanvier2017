@@ -60,7 +60,8 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/name"
-            android:id="@+id/nameTxt"/>
+            android:id="@+id/nameTxt"
+            android:textSize="@dimen/basicText2_xl"/>
 
         <!-- Label description -->
         <TextView
@@ -85,7 +86,8 @@
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/desc"
             android:id="@+id/descTxt"
-            android:inputType="textMultiLine"/>
+            android:inputType="textMultiLine"
+            android:textSize="@dimen/basicText2_xl"/>
 
         <!-- Label prix -->
         <TextView
@@ -110,7 +112,8 @@
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/prix"
             android:id="@+id/prixTxt"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/basicText2_xl"/>
 
         <!-- Label état -->
         <TextView
@@ -178,7 +181,8 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/city"
-            android:id="@+id/cityTxt" />
+            android:id="@+id/cityTxt"
+            android:textSize="@dimen/basicText2_xl"/>
 
         <!-- Bouton ville -->
         <Button

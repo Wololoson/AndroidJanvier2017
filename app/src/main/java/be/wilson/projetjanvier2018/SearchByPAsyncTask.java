@@ -18,9 +18,12 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class SearchByPAsyncTask extends AsyncTask<String, String, ArrayList<String>> {
+
+    //Déclaration des variables
     private SearchByPriceActivity act;
     private Intent intent;
 
+    //Constructeur qui récupère l'activité d'origine
     public SearchByPAsyncTask(SearchByPriceActivity act){
         this.act = act;
     }
@@ -31,12 +34,15 @@ public class SearchByPAsyncTask extends AsyncTask<String, String, ArrayList<Stri
         ArrayList<String> itemsString = null;
 
         try {
+            //Connexion
             URL url = new URL("http://lanww.ddns.net/searchByP.php?"+data);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.setRequestProperty("Content-Type","text/plain");
             urlConnection.setRequestProperty("charset", "utf-8");
             urlConnection.setDoInput(true);
+
+            //Récupération des données
             InputStream is = urlConnection.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is, "iso-8859-1"));
             String result = "";
@@ -51,6 +57,7 @@ public class SearchByPAsyncTask extends AsyncTask<String, String, ArrayList<Stri
             JSONArray itemsArr = new JSONArray(result);
             itemsString = new ArrayList<>();
 
+            //Construction de l'ArrayList des données
             for (int i = 0; i < itemsArr.length(); i++) {
                 itemsString.add(itemsArr.getJSONObject(i).getString("nom"));
                 itemsString.add(itemsArr.getJSONObject(i).getString("prix"));
@@ -68,6 +75,8 @@ public class SearchByPAsyncTask extends AsyncTask<String, String, ArrayList<Stri
     @Override
     protected void onPostExecute(ArrayList<String> items) {
         super.onPostExecute(items);
+
+        //Envoi des données dans l'activité de résultats
         intent = new Intent(act, ResultsActivity.class);
         intent.putExtra("items", items);
         act.startActivityForResult(intent, 3);

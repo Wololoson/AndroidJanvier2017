@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class ItemInfosActivity extends AppCompatActivity {
 
+    //Déclaration des variables
     private TextView name, desc, price, state, city, infos;
     private Button backBtn;
 
@@ -22,6 +23,7 @@ public class ItemInfosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_infos);
 
+        //Si on tourne l'écran
         if(savedInstanceState != null) {
             passedBndl = null;
             item = savedInstanceState.getStringArray("item");
@@ -45,6 +47,7 @@ public class ItemInfosActivity extends AppCompatActivity {
         fill();
     }
 
+    //Remplissage des infos de l'aticle
     public void fill(){
         name.setText(item[0]);
         desc.setText(item[4]);
@@ -60,6 +63,7 @@ public class ItemInfosActivity extends AppCompatActivity {
             infos.setText("Can be sent");
     }
 
+    //Sauvegarde pour la rotation
     @Override
     public void onSaveInstanceState(Bundle saveInstanceState) {
         super.onSaveInstanceState(saveInstanceState);

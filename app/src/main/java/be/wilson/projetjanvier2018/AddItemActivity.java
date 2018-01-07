@@ -17,6 +17,7 @@ import java.net.URLEncoder;
 
 public class AddItemActivity extends AppCompatActivity {
 
+    //Déclaration des variables
     private Button addItem, cityChoice, back;
     private Intent homeIntent, cityChoiceIntent;
     private EditText nameET, descET, priceET, cityET;
@@ -49,6 +50,7 @@ public class AddItemActivity extends AppCompatActivity {
         homeIntent = new Intent(AddItemActivity.this, HomeActivity.class);
         cityChoiceIntent = new Intent(AddItemActivity.this, LoadingScreenActivity.class);
 
+        //Si on tourne l'écran
         if(savedInstanceState != null){
             nameET.setText(savedInstanceState.getString("name"));
             descET.setText(savedInstanceState.getString("desc"));
@@ -65,6 +67,7 @@ public class AddItemActivity extends AppCompatActivity {
         }
     }
 
+    //Validation de l'article
     View.OnClickListener validLis = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -102,6 +105,7 @@ public class AddItemActivity extends AppCompatActivity {
         }
     };
 
+    //Fonction de construction des données de l'URL
     public void addParam(String key, String value, boolean last){
         try {
             result.append(URLEncoder.encode(key, "UTF-8"));
@@ -114,6 +118,7 @@ public class AddItemActivity extends AppCompatActivity {
         }
     }
 
+    //Choix d'une ville
     View.OnClickListener cityChoiceLis = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -121,6 +126,7 @@ public class AddItemActivity extends AppCompatActivity {
         }
     };
 
+    //Détection du résultat du choix de villes
     protected void onActivityResult(int num_requete, int code_retour, Intent data){
         if(num_requete == 2){
             if(code_retour == Activity.RESULT_OK){
@@ -129,6 +135,7 @@ public class AddItemActivity extends AppCompatActivity {
         }
     }
 
+    //Retour vers l'accueil
     View.OnClickListener backLis = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -136,6 +143,7 @@ public class AddItemActivity extends AppCompatActivity {
         }
     };
 
+    //Sauvegarde des données lors de la rotation
     protected void onSaveInstanceState(Bundle saveInstanceState){
         super.onSaveInstanceState(saveInstanceState);
 

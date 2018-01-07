@@ -15,6 +15,7 @@ import java.net.URLEncoder;
 
 public class SearchByCityActivity extends AppCompatActivity {
 
+    //Déclaration des variables
     private Intent homeIntent, cityChoiceIntent;
     private EditText cityET;
     private Button backBtn, cityChoiceBtn, confirmBtn;
@@ -41,11 +42,13 @@ public class SearchByCityActivity extends AppCompatActivity {
         homeIntent = new Intent(SearchByCityActivity.this, HomeActivity.class);
         cityChoiceIntent = new Intent(SearchByCityActivity.this, LoadingScreenActivity.class);
 
+        //Si on tourne l'écran
         if(savedInstanceState != null){
             cityET.setText(savedInstanceState.getString("city"));
         }
     }
 
+    //Validation de la recherche
     View.OnClickListener confirmLis = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -62,6 +65,7 @@ public class SearchByCityActivity extends AppCompatActivity {
         }
     };
 
+    //Construction de la chaine de paramètres
     public void addParam(String key, String value, boolean last){
         try {
             result.append(URLEncoder.encode(key, "UTF-8"));
@@ -74,6 +78,7 @@ public class SearchByCityActivity extends AppCompatActivity {
         }
     }
 
+    //Choix de la ville
     View.OnClickListener cityChoiceLis = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -81,6 +86,7 @@ public class SearchByCityActivity extends AppCompatActivity {
         }
     };
 
+    //Détection du retour de la ville choisie
     protected void onActivityResult(int num_requete, int code_retour, Intent data){
         if(num_requete == 4){
             if(code_retour == Activity.RESULT_OK){
@@ -89,6 +95,7 @@ public class SearchByCityActivity extends AppCompatActivity {
         }
     }
 
+    //Retour à l'accueil
     View.OnClickListener backLis = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -96,6 +103,7 @@ public class SearchByCityActivity extends AppCompatActivity {
         }
     };
 
+    //Sauvegarde pour la rotation
     @Override
     public void onSaveInstanceState(Bundle saveInstanceState) {
         super.onSaveInstanceState(saveInstanceState);

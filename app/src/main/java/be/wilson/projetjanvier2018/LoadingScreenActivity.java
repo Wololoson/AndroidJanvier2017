@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 
 public class LoadingScreenActivity extends AppCompatActivity {
 
+    //Déclaration des variables
     private ProgressBar progressBar;
 
     @Override
@@ -18,12 +19,14 @@ public class LoadingScreenActivity extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        //Si on tourne l'écran
         if(savedInstanceState == null) {
                 CityWizardAsyncTask cityGet = new CityWizardAsyncTask(LoadingScreenActivity.this);
                 cityGet.execute();
         }
     }
 
+    //Arrêt du chargement si la tâche asynchrône a terminé ses opérations
     protected void onActivityResult(int num_requete, int code_retour, Intent data){
         if(num_requete == 1){
             if(code_retour == RESULT_OK){

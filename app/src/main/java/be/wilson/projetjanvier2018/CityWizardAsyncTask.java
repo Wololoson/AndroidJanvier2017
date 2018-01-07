@@ -18,9 +18,11 @@ import java.net.URL;
 
 public class CityWizardAsyncTask extends AsyncTask <Void, Void, String[]> {
 
+    //Déclaration des variables
     private LoadingScreenActivity act;
     private Intent intent;
 
+    //Constructeur qui récupère l'activité d'origine
     public CityWizardAsyncTask(LoadingScreenActivity act){
         this.act = act;
     }
@@ -35,11 +37,14 @@ public class CityWizardAsyncTask extends AsyncTask <Void, Void, String[]> {
         String[] citiesString = null;
 
         try {
+            //Connexion
             URL url = new URL("http://lanww.ddns.net/cities.json");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.setDoInput(true);
             urlConnection.setDoOutput(true);
+
+            //Récupération des données
             InputStream is = urlConnection.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
             String result = "";
@@ -50,9 +55,11 @@ public class CityWizardAsyncTask extends AsyncTask <Void, Void, String[]> {
             br.close();
             is.close();
             urlConnection.disconnect();
+
             JSONArray citiesArr = new JSONArray(result);
             citiesString = new String[citiesArr.length()];
 
+            //Passage des données dans un tableau
             for (int i = 0; i < citiesArr.length(); i++) {
                 citiesString[i] = citiesArr.getJSONObject(i).getString("name");
             }
@@ -69,6 +76,8 @@ public class CityWizardAsyncTask extends AsyncTask <Void, Void, String[]> {
     @Override
     protected void onPostExecute(String[] cities) {
         super.onPostExecute(cities);
+
+        //Retour des données dans l'activité
         intent = new Intent(act, CityWizardActivity.class);
         intent.putExtra("cities", cities);
         act.startActivityForResult(intent, 1);

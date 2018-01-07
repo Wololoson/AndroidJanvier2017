@@ -10,6 +10,7 @@ import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
 
+    //Déclaration des variables
     private Button addItem, searchByP, searchByC;
     private Intent addItemIntent, searchByPIntent, searchByCIntent;
 
@@ -31,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         searchByCIntent = new Intent(HomeActivity.this, SearchByCityActivity.class);
     }
 
+    //Choix de la fonctionnalité
     View.OnClickListener choiceLis = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

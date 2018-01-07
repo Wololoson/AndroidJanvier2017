@@ -13,6 +13,7 @@ import java.net.URLEncoder;
 
 public class SearchByPriceActivity extends AppCompatActivity {
 
+    //Déclaration des variables
     Intent confirmIntent, backIntent;
     Button confirmBtn, backBtn;
     EditText minET, maxET;
@@ -39,12 +40,14 @@ public class SearchByPriceActivity extends AppCompatActivity {
         backBtn.setOnClickListener(backLis);
         confirmBtn.setOnClickListener(confirmLis);
 
+        //Si on tourne l'écran
         if(savedInstanceState != null){
             minET.setText(savedInstanceState.getString("min"));
             maxET.setText(savedInstanceState.getString("max"));
         }
     }
 
+    //Retour à l'accueil
     View.OnClickListener backLis = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -52,6 +55,7 @@ public class SearchByPriceActivity extends AppCompatActivity {
         }
     };
 
+    //Validation de la recherche
     View.OnClickListener confirmLis = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -70,6 +74,7 @@ public class SearchByPriceActivity extends AppCompatActivity {
         }
     };
 
+    //Construction de la chaine de paramètres
     public void addParam(String key, String value, boolean last){
         try {
             result.append(URLEncoder.encode(key, "UTF-8"));
@@ -82,6 +87,7 @@ public class SearchByPriceActivity extends AppCompatActivity {
         }
     }
 
+    //Sauvegarde pour la rotation
     @Override
     public void onSaveInstanceState(Bundle saveInstanceState) {
         super.onSaveInstanceState(saveInstanceState);

@@ -47,7 +47,9 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/min_price"
-            android:id="@+id/min_priceTxt" />
+            android:id="@+id/min_priceTxt"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/basicText2_xl"/>
 
         <!-- Label prix maximum -->
         <TextView
@@ -71,7 +73,9 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/max_price"
-            android:id="@+id/max_priceTxt" />
+            android:id="@+id/max_priceTxt"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/basicText2_xl"/>
 
         <!-- Bouton validation -->
         <Button

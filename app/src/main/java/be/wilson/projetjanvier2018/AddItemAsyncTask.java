@@ -23,17 +23,22 @@ public class AddItemAsyncTask extends AsyncTask<String, String, String> {
         String data = params[0];
 
         try {
+            //Connexion
             URL url = new URL("http://lanww.ddns.net/articles.php");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("POST");
             urlConnection.setDoInput(true);
             urlConnection.setDoOutput(true);
+
+            //Envoi des données
             OutputStream out = urlConnection.getOutputStream();
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out, "UTF-8"));
             writer.write(data);
             writer.flush();
             writer.close();
             out.close();
+
+            //Récupération des erreurs s'il y en a
             InputStream is = urlConnection.getErrorStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is, "iso-8859-1"));
             String result = "";

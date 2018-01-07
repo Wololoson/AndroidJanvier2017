@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 public class CityWizardActivity extends AppCompatActivity {
 
+    //Déclaration des variables
     private RadioGroup rgCities;
     private SearchView searchBtn;
     private String[] cities;
@@ -38,6 +39,7 @@ public class CityWizardActivity extends AppCompatActivity {
         rgCities = (RadioGroup) findViewById(R.id.radioGrp_cities);
         searchBtn = (SearchView) findViewById(R.id.searchBar);
 
+        //Barre de recherche
         searchBtn.setOnQueryTextListener(searchLis);
         int searchIconId = searchBtn.getContext().getResources().getIdentifier("android:id/search_button",null, null);
         ImageView searchIcon = (ImageView) searchBtn.findViewById(searchIconId);
@@ -70,6 +72,7 @@ public class CityWizardActivity extends AppCompatActivity {
         }
     }
 
+    //Retour à la page d'ajout
     View.OnClickListener backLis = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -78,6 +81,7 @@ public class CityWizardActivity extends AppCompatActivity {
         }
     };
 
+    //Validation de la sélection et retour à la page d'ajout
     View.OnClickListener submitLis = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -96,6 +100,7 @@ public class CityWizardActivity extends AppCompatActivity {
         }
     };
 
+    //Recherche lors de la validation dans la barre de recherche
     SearchView.OnQueryTextListener searchLis = new SearchView.OnQueryTextListener() {
         @Override
         public boolean onQueryTextSubmit(String query) {
