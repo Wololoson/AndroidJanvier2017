@@ -194,7 +194,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         while(i < length)
         {
-            if(items[i][0].compareTo(items[indice_max][0]) > 0)
+            if(Double.parseDouble(items[i][1]) > Double.parseDouble(items[indice_max][1]))
                 indice_max = i;
             i++;
         }
