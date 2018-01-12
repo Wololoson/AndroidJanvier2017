@@ -375,7 +375,7 @@ public class ResultsActivity extends AppCompatActivity {
         public void onClick(View view) {
             interval = -1;
             firstArt += 5;
-            if(firstArt <= items.length && firstArt > items.length-5)
+            if(firstArt <= items.length && firstArt >= items.length-5)
                 interval = items.length - firstArt;
             if(interval == -1) {
                 interval = 5;
@@ -442,7 +442,10 @@ public class ResultsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if(resuming) {
-            new SearchByCAsyncTask(this).execute(data);
+            if(data.charAt(0) == 'c')
+                new SearchByCAsyncTask(this).execute(data);
+            else
+                new SearchByPAsyncTask(this).execute(data);
             resuming = false;
         }
     }

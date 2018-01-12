@@ -1,5 +1,6 @@
 package be.wilson.projetjanvier2018;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,11 +21,11 @@ import java.util.ArrayList;
 public class SearchByPAsyncTask extends AsyncTask<String, String, ArrayList<String>> {
 
     //Déclaration des variables
-    private SearchByPriceActivity act;
+    private Activity act;
     private Intent intent;
 
     //Constructeur qui récupère l'activité d'origine
-    public SearchByPAsyncTask(SearchByPriceActivity act){
+    public SearchByPAsyncTask(Activity act){
         this.act = act;
     }
 
